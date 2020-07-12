@@ -1,0 +1,1 @@
+{"version":3,"file":"msh-node.umd.js","sources":["../src/msh-node.ts"],"sourcesContent":["// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)\n  // import \"core-js/fn/array.find\"\n  // ...\nexport default class DummyClass {\n\n}\n"],"names":[],"mappings":";;;;;;EAAA;EACE;EACA;;MACF;OAEC;MAAD,iBAAC;EAAD,CAAC;;;;;;;;"}
