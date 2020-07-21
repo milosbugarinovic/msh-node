@@ -57,7 +57,7 @@
     "node": ">=6.0.0"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "husky": {
     "hooks": {
@@ -72,7 +72,7 @@
       "/node_modules/",
       "/test/",
       "/.idea/",
-      "/dist/",
+      "/lib/",
       "/tools/",
       "/docs/"
     ],
@@ -103,8 +103,8 @@
       "git add"
     ]
   },
-  "main": "dist/msh-node.umd.js",
-  "module": "dist/msh-node.es5.js",
+  "main": "msh-node.umd.js",
+  "module": "msh-node.es5.js",
   "name": "msh-node",
   "prettier": {
     "arrowParens": "avoid",
@@ -125,7 +125,7 @@
     "commit": "git-cz",
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf lib && rimraf msh-node.es5.* && rimraf msh-node.umd.*",
     "precommit": "lint-staged",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release",
@@ -136,6 +136,6 @@
     "test:watch": "jest --coverage --watch",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "typings": "dist/types/msh-node.d.ts",
+  "typings": "lib/msh-node.d.ts",
   "version": "0.0.0"
 }
