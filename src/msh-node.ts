@@ -1,6 +1,11 @@
-// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
-  // import "core-js/fn/array.find"
-  // ...
-export default class DummyClass {
+import { Initiable } from './initiable'
 
+export class MshNode {
+  private __initList: Initiable[]
+  constructor(...args: Initiable[]) {
+    this.__initList = args
+  }
+  public async initiate(): Promise<void> {
+    await Promise.all(this.__initList.map(init => init.initiate()))
+  }
 }
